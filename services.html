@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>All Services — Sachivalayam Portal</title>
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi&family=Noto+Sans:wght@400;500;600;700;800&family=Mukta:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    /* ── Marquee ticker ── */
+    .ticker-wrap {
+      background: var(--saffron-light);
+      border-top: 2px solid var(--saffron);
+      border-bottom: 2px solid var(--saffron);
+      padding: 9px 0;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+    .ticker-inner {
+      display: inline-block;
+      animation: marquee 30s linear infinite;
+    }
+    .ticker-inner span {
+      display: inline-block;
+      padding: 0 52px;
+      font-size: 13.5px;
+      color: var(--navy);
+      font-weight: 500;
+    }
+    .ticker-inner span::before { content: '📢 '; }
+
+    /* ── Category tabs ── */
+    .cat-tabs {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 28px;
+    }
+    .cat-tab {
+      border: 1.5px solid var(--border);
+      border-radius: 24px;
+      padding: 8px 20px;
+      font-size: 13.5px;
+      font-weight: 600;
+      color: var(--text-muted);
+      cursor: pointer;
+      background: white;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+    .cat-tab:hover { border-color: var(--navy); color: var(--navy); }
+    .cat-tab.active { background: var(--navy); color: white; border-color: var(--navy); }
+    .cat-tab i { font-size: 13px; }
+    .cat-tab .count {
+      background: rgba(255,255,255,0.25);
+      font-size: 11px;
+      padding: 1px 7px;
+      border-radius: 10px;
+    }
+    .cat-tab:not(.active) .count {
+      background: var(--bg2);
+      color: var(--text-muted);
+    }
+
+    /* ── Service list full ── */
+    .services-full-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 20px;
+    }
+    .service-full-card {
+      background: white;
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 22px;
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+      position: relative;
+    }
+    .service-full-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--navy);
+    }
+    .sfc-icon {
+      width: 52px; height: 52px;
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 22px;
+      flex-shrink: 0;
+      transition: var(--transition);
+    }
+    .service-full-card:hover .sfc-icon { transform: scale(1.08); }
+    .sfc-body { flex: 1; }
+    .sfc-body h3 { font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 5px; }
+    .sfc-body p  { font-size: 13px; color: var(--text-muted); line-height: 1.5; margin-bottom: 12px; }
+    .sfc-meta   { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+    .sfc-meta span { font-size: 11.5px; color: var(--text-muted); display: flex; align-items: center; gap: 4px; }
+    .sfc-meta i    { color: var(--navy); }
+    .sfc-actions   { display: flex; gap: 8px; margin-top: 12px; }
+    .btn-apply {
+      background: var(--navy); color: white;
+      padding: 7px 16px; border-radius: 7px;
+      font-size: 12.5px; font-weight: 700;
+      transition: var(--transition);
+      display: inline-flex; align-items: center; gap: 5px;
+    }
+    .btn-apply:hover { background: var(--saffron); }
+    .btn-info {
+      border: 1.5px solid var(--border); color: var(--text-muted);
+      padding: 7px 14px; border-radius: 7px;
+      font-size: 12.5px; font-weight: 600;
+      transition: var(--transition);
+      display: inline-flex; align-items: center; gap: 5px;
+    }
+    .btn-info:hover { border-color: var(--navy); color: var(--navy); }
+
+    /* ── Sidebar filter ── */
+    .services-layout {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 28px;
+      align-items: start;
+    }
+    .filter-sidebar {
+      background: white;
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 22px;
+      box-shadow: var(--shadow-sm);
+      position: sticky;
+      top: 68px;
+    }
+    .filter-sidebar h4 {
+      font-size: 14px; font-weight: 700; color: var(--navy);
+      margin-bottom: 16px; display: flex; align-items: center; gap: 8px;
+    }
+    .filter-group { margin-bottom: 20px; }
+    .filter-group label {
+      display: block; font-size: 12.5px; font-weight: 600;
+      color: var(--text-muted); margin-bottom: 8px;
+      text-transform: uppercase; letter-spacing: 0.5px;
+    }
+    .filter-check {
+      display: flex; align-items: center; gap: 8px;
+      padding: 6px 0; cursor: pointer; font-size: 13.5px; color: var(--text);
+    }
+    .filter-check input[type="checkbox"] { accent-color: var(--navy); width: 15px; height: 15px; }
+    .filter-check .fcount {
+      margin-left: auto; font-size: 11px; color: var(--text-muted);
+      background: var(--bg2); padding: 1px 7px; border-radius: 8px;
+    }
+    .btn-apply-filter {
+      width: 100%; background: var(--navy); color: white;
+      padding: 10px; border-radius: 8px; font-size: 14px; font-weight: 600;
+      transition: var(--transition);
+    }
+    .btn-apply-filter:hover { background: var(--saffron); }
+    .btn-clear-filter {
+      width: 100%; border: 1.5px solid var(--border); color: var(--text-muted);
+      padding: 9px; border-radius: 8px; font-size: 13.5px; font-weight: 600;
+      margin-top: 8px; transition: var(--transition);
+    }
+    .btn-clear-filter:hover { border-color: var(--red); color: var(--red); }
+
+    /* Search results count */
+    .results-bar {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-bottom: 20px; flex-wrap: wrap; gap: 10px;
+    }
+    .results-bar span { font-size: 14px; color: var(--text-muted); }
+    .results-bar strong { color: var(--navy); }
+    .sort-select {
+      border: 1.5px solid var(--border); border-radius: 8px;
+      padding: 7px 12px; font-size: 13.5px; outline: none;
+      font-family: inherit; color: var(--text);
+    }
+    .sort-select:focus { border-color: var(--navy); }
+
+    @media (max-width: 900px) {
+      .services-layout { grid-template-columns: 1fr; }
+      .filter-sidebar { position: static; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- UTILITY BAR -->
+  <div class="utility-bar">
+    <div class="container utility-inner">
+      <div class="utility-left">
+        <span>Skip to Main Content</span>
+        <span class="divider">|</span>
+        <span>A- A A+</span>
+      </div>
+      <div class="utility-right">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <span class="divider">|</span>
+        <span><i class="fas fa-globe"></i> English | తెలుగు</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header class="main-header">
+    <div class="container header-inner">
+      <div class="header-logo">
+        <div class="emblem">
+          <svg width="56" height="56" viewBox="0 0 64 64" fill="none">
+            <circle cx="32" cy="32" r="30" fill="#0D47A1" stroke="#FF9933" stroke-width="3"/>
+            <circle cx="32" cy="32" r="8" fill="#FF9933"/>
+            <circle cx="32" cy="32" r="4" fill="#0D47A1"/>
+            <text x="32" y="50" text-anchor="middle" fill="white" font-size="7" font-family="Noto Sans" font-weight="700">TS</text>
+          </svg>
+        </div>
+        <div class="logo-text">
+          <a href="index.html"><span class="logo-title">Sachivalayam Citizen Portal</span></a>
+          <span class="logo-sub">Government of Telangana</span>
+        </div>
+      </div>
+      <div class="header-right">
+        <a href="dashboard.html" class="btn-login"><i class="fas fa-user-circle"></i> My Dashboard</a>
+        <a href="#" class="btn-register"><i class="fas fa-user-plus"></i> Register</a>
+        <div class="helpline">
+          <i class="fas fa-phone-alt"></i>
+          <div><span class="helpline-label">Helpline</span><span class="helpline-num">1800-599-4747</span></div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- NAV -->
+  <nav class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+        <li><a href="services.html" class="active"><i class="fas fa-layer-group"></i> Services</a></li>
+        <li><a href="schemes.html"><i class="fas fa-medal"></i> Schemes</a></li>
+        <li><a href="contact.html"><i class="fas fa-phone"></i> Contact</a></li>
+        <li><a href="dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+      </ul>
+      <div class="nav-search">
+        <input type="text" placeholder="Search services..." />
+        <button><i class="fas fa-search"></i></button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- TICKER -->
+  <div class="ticker-wrap">
+    <div class="ticker-inner">
+      <span>Rythu Bandhu Kharif 2025 disbursement started — check payment status now</span>
+      <span>Aarogyasri Phase-IV: 300 new hospitals empanelled across Telangana</span>
+      <span>Online KYC mandatory for Aasara Pension beneficiaries before 15 June 2025</span>
+      <span>Mee Seva centers now open till 8 PM from June 2025 — extended service hours</span>
+      <span>BC Welfare scholarship last date: 31 May 2025 — Apply before deadline</span>
+    </div>
+  </div>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="container page-hero-content">
+      <div class="breadcrumb">
+        <a href="index.html"><i class="fas fa-home"></i> Home</a>
+        <i class="fas fa-chevron-right"></i>
+        <span class="current">All Services</span>
+      </div>
+      <h1><i class="fas fa-layer-group" style="color:var(--saffron);margin-right:12px;"></i>Citizen Services</h1>
+      <p>Access all 500+ government services online — certificates, schemes, welfare, land records and more.</p>
+    </div>
+  </section>
+
+  <!-- MAIN CONTENT -->
+  <section class="section" style="padding-top:40px;">
+    <div class="container">
+
+      <!-- Category Tabs -->
+      <div class="cat-tabs" id="catTabs">
+        <button class="cat-tab active" data-cat="all"><i class="fas fa-th"></i> All Services <span class="count">500+</span></button>
+        <button class="cat-tab" data-cat="revenue"><i class="fas fa-gavel"></i> Revenue <span class="count">84</span></button>
+        <button class="cat-tab" data-cat="health"><i class="fas fa-heartbeat"></i> Health <span class="count">62</span></button>
+        <button class="cat-tab" data-cat="agriculture"><i class="fas fa-tractor"></i> Agriculture <span class="count">48</span></button>
+        <button class="cat-tab" data-cat="education"><i class="fas fa-graduation-cap"></i> Education <span class="count">55</span></button>
+        <button class="cat-tab" data-cat="welfare"><i class="fas fa-users"></i> Social Welfare <span class="count">70</span></button>
+        <button class="cat-tab" data-cat="utility"><i class="fas fa-bolt"></i> Utilities <span class="count">40</span></button>
+        <button class="cat-tab" data-cat="property"><i class="fas fa-home"></i> Property <span class="count">38</span></button>
+      </div>
+
+      <div class="services-layout">
+
+        <!-- SIDEBAR -->
+        <aside class="filter-sidebar">
+          <h4><i class="fas fa-filter" style="color:var(--saffron);"></i> Filter Services</h4>
+
+          <div class="filter-group">
+            <label>Delivery Time</label>
+            <div class="filter-check"><input type="checkbox" id="d1"> <label for="d1">Same Day</label><span class="fcount">28</span></div>
+            <div class="filter-check"><input type="checkbox" id="d2"> <label for="d2">1–3 Days</label><span class="fcount">95</span></div>
+            <div class="filter-check"><input type="checkbox" id="d3"> <label for="d3">4–7 Days</label><span class="fcount">140</span></div>
+            <div class="filter-check"><input type="checkbox" id="d4"> <label for="d4">7+ Days</label><span class="fcount">237</span></div>
+          </div>
+
+          <div class="filter-group">
+            <label>Fee</label>
+            <div class="filter-check"><input type="checkbox" id="f1"> <label for="f1">Free</label><span class="fcount">180</span></div>
+            <div class="filter-check"><input type="checkbox" id="f2"> <label for="f2">₹1 – ₹100</label><span class="fcount">140</span></div>
+            <div class="filter-check"><input type="checkbox" id="f3"> <label for="f3">₹100 – ₹500</label><span class="fcount">120</span></div>
+            <div class="filter-check"><input type="checkbox" id="f4"> <label for="f4">₹500+</label><span class="fcount">60</span></div>
+          </div>
+
+          <div class="filter-group">
+            <label>Service Mode</label>
+            <div class="filter-check"><input type="checkbox" id="m1" checked> <label for="m1">Online</label><span class="fcount">420</span></div>
+            <div class="filter-check"><input type="checkbox" id="m2"> <label for="m2">At Mee Seva</label><span class="fcount">380</span></div>
+            <div class="filter-check"><input type="checkbox" id="m3"> <label for="m3">At Sachivalayam</label><span class="fcount">500</span></div>
+          </div>
+
+          <div class="filter-group">
+            <label>Beneficiary</label>
+            <div class="filter-check"><input type="checkbox" id="b1"> <label for="b1">All Citizens</label><span class="fcount">210</span></div>
+            <div class="filter-check"><input type="checkbox" id="b2"> <label for="b2">Farmers</label><span class="fcount">48</span></div>
+            <div class="filter-check"><input type="checkbox" id="b3"> <label for="b3">Women</label><span class="fcount">65</span></div>
+            <div class="filter-check"><input type="checkbox" id="b4"> <label for="b4">Students</label><span class="fcount">55</span></div>
+            <div class="filter-check"><input type="checkbox" id="b5"> <label for="b5">Senior Citizens</label><span class="fcount">38</span></div>
+          </div>
+
+          <button class="btn-apply-filter"><i class="fas fa-filter"></i> Apply Filters</button>
+          <button class="btn-clear-filter"><i class="fas fa-times"></i> Clear All</button>
+        </aside>
+
+        <!-- SERVICE CARDS -->
+        <div>
+          <div class="results-bar">
+            <span>Showing <strong>500+</strong> services</span>
+            <select class="sort-select">
+              <option>Sort: Most Popular</option>
+              <option>Sort: A–Z</option>
+              <option>Sort: Fastest Delivery</option>
+              <option>Sort: Lowest Fee</option>
+            </select>
+          </div>
+
+          <div class="services-full-grid" id="servicesGrid">
+
+            <!-- Revenue -->
+            <div class="service-full-card" data-cat="revenue">
+              <div class="sfc-icon" style="background:#E3F0FF;"><i class="fas fa-id-card" style="color:#0D47A1;"></i></div>
+              <div class="sfc-body">
+                <h3>Caste Certificate</h3>
+                <p>Apply for SC/ST/BC/OC caste certificate with Aadhaar-based verification through Sachivalayam.</p>
+                <div class="sfc-meta">
+                  <span><i class="fas fa-clock"></i> 3–5 Days</span>
+                  <span><i class="fas fa-rupee-sign"></i> ₹35</span>
+                  <span><i class="fas fa-laptop"></i> Online</span>
+                  <span class="service-badge popular">Popular</span>
+                </div>
+                <div class="sfc-actions">
+                  <a href="dashboard.html" class="btn-apply"><i class="fas fa-paper-plane"></i> Apply</a>
+                  <a href="#" class="btn-info"><i class="fas fa-info-circle"></i> Details</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="service-full-card" data-cat="revenue">
+              <div class="sfc-icon" style="background:#E8F5E9;"><i class="fas fa-file-invoice" style="color:#2E7D32;"></i></div>
+              <div class="sfc-body">
+                <h3>Income Certificate</h3>
+                <p>Annual income certificate for all purposes including scholarships, loans, and government schemes.</p>
+                <div class="sfc-meta">
+                  <span><i class="fas fa-clock"></i> 3 Days</span>
+                  <span><i class="fas fa-rupee-sign"></i> ₹35</span>
+                  <span><i class="fas fa-laptop"></i> Online</span>
+                </div>
+                <div class="sfc-actions">
+                  <a href="dashboard.html" class="btn-apply"><i class="fas fa-paper-plane"></i> Apply</a>
+                  <a href="#" class="btn-info"><i class="fas fa-info-circle"></i> Details</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="service-full-card" data-cat="revenue">
+              <div class="sfc-icon" style="background:#FFF3E0;"><i class="fas fa-map-marked-alt" style="color:#E65100;"></i></div>
+              <div class="sfc-body">
+                <h3>Residence Certificate</h3>
+                <p>Domicile / residence certificate for employment, education, and government purposes.</p>
+                <div class="sfc-meta">
+                  <span><i class="fas fa-clock"></i> 2 Days</span>
+                  <span><i class="fas fa-rupee-sign"></i> ₹25</span>
+                  <span><i class="fas fa-laptop"></i> Online</span>
+                </div>
+                <div class="sfc-actions">
+                  <a href="dashboard.html" class="btn-apply"><i class="fas fa-paper-plane"></i> Apply</a>
+                  <a href="#" class="btn-info"><i class="fas fa-info-circle"></i> Details</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="service-full-card" data-cat="property">
+              <div class="sfc-icon" style="background:#FCE4EC;"><i class="fas fa-scroll" style="color:#C62828;"></i></div>
+              <div class="sfc-body">
+                <h3>Pahani (Land Record)</h3>
+                <p>View and download Pahani (RoR) for agricultural land with real-time updates from MeeBhoomi.</p>
+                <div class="sfc-meta">
+                  <span><i class="fas fa-clock"></i> Instant</span>
+                  <span><i class="fas fa-rupee-sign"></i> Free</span>
+                  <span><i class="fas fa-laptop"></i> Online</span>
+                  <span class="service-badge new">New</span>
+                </div>
+                <div class="sfc-actions">
+                  <a href="dashboard.html" class="btn-apply"><i class="fas fa-paper-plane"></i> View</a>
+                  <a href="#" class="btn-info"><i class="fas fa-info-circle"></i> Details</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="service-full-card" data-cat="health">
+              <div class="sfc-icon" style="background:#E3F0FF;"><i class="fas fa-heartbeat" style="color:#0D47A1;"></i></div>
+              <div class="sfc-body">
+                <h3>Aarogyasri Card</h3>
+                <p>Enroll for Aarogyasri health insurance coverage of ₹5 lakh per family per year.</p>
+                <div class="sfc-meta">
+                  <span><i class="fas fa-clock"></i> 2 Days</span>
+                  <span><i class="fas fa-rupee-sign"></i> Free</span>
+                  <span><i class="fas fa-laptop"></i> Online</span>
+                  <span class="service-badge popular">Popular</span>
+                </div>
+                <div class="sfc-actions">
+                  <a href="dashboard.html" class="btn-apply"><i class="fas fa-paper-plane"></i> Apply</a>
+                  <a href="#" class="btn-info"><i class="fas fa-info-circle"></i> Details</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="service-full-card" data-cat="agriculture">
+              <div class="sfc-icon" style="background:#E8F5E9;"><i class="fas fa-tractor" style="color:#2E7D32;"></i></div>
+              <div class="sfc-body">
+                <h3>Rythu Bandhu Registration</h3>
+                <p>Register for Rythu Bandhu investment support scheme — ₹10,000 per acre per season.</p>
+                <div class="sfc-meta">
+                  <span><i class="fas fa-clock"></i> 7 Days</span>
+                  <span><i class="fas fa-rupee-sign"></i> Free</span>
+                  <span><i class="fas fa-laptop"></i> Online</span>
+                </div>
+                <div class="sfc-actions">
+                  <a href="dashboard.html" class="btn-apply"><i class="fas fa-paper-plane"></i> Apply</a>
+                  <a href="#" class="btn-info"><i class="fas fa-info-circle"></i> Details</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="service-full-card" data-cat="welfare">
+              <div class="sfc-icon" style="background:#EDE7F6;"><i class="fas fa-coins" style="color:#6A1B9A;"></i></div>
+              <div class="sfc-body">
+                <h3>Aasara Pension</h3>
+                <p>Monthly pension for old age, widow, differently-abled and weaver families in Telangana.</p>
+                <div class="sfc-meta">
+                  <span><i class="fas fa-clock"></i> 7 Days</span>
+                  <span><i class="fas fa-rupee-sign"></i> Free</span>
+                  <span><i class="fas fa-laptop"></i> Online</span>
+                  <span class="service-badge urgent">Priority</span>
+                </div>
+                <div class="sfc-actions">
+                  <a href="dashboard.html" class="btn-apply"><i class="fas fa-paper-plane"></i> Apply</a>
+                  <a href="#" class="btn-info"><i class="fas fa-info-circle"></i> Details</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="service-full-card" data-cat="education">
+              <div class="sfc-icon" style="background:#FFF3E0;"><i class="fas fa-graduation-cap" style="color:#E65100;"></i></div>
+              <div class="sfc-body">
+                <h3>Fee Reimbursement</h3>
+                <p>Apply for tuition fee reimbursement for SC/ST/BC/EWS students in professional courses.</p>
+                <div class="sfc-meta">
+                  <span><i class="fas fa-clock"></i> 5 Days</span>
+                  <span><i class="fas fa-rupee-sign"></i> Free</span>
+                  <span><i class="fas fa-laptop"></i> Online</span>
+                </div>
+                <div class="sfc-actions">
+                  <a href="dashboard.html" class="btn-apply"><i class="fas fa-paper-plane"></i> Apply</a>
+                  <a href="#" class="btn-info"><i class="fas fa-info-circle"></i> Details</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="service-full-card" data-cat="property">
+              <div class="sfc-icon" style="background:#E3F0FF;"><i class="fas fa-home" style="color:#0D47A1;"></i></div>
+              <div class="sfc-body">
+                <h3>Property Registration</h3>
+                <p>Book slot for property registration, pay stamp duty and receive digitally signed EC.</p>
+                <div class="sfc-meta">
+                  <span><i class="fas fa-clock"></i> 1 Day</span>
+                  <span><i class="fas fa-rupee-sign"></i> As applicable</span>
+                  <span><i class="fas fa-laptop"></i> Online + Visit</span>
+                </div>
+                <div class="sfc-actions">
+                  <a href="dashboard.html" class="btn-apply"><i class="fas fa-paper-plane"></i> Book Slot</a>
+                  <a href="#" class="btn-info"><i class="fas fa-info-circle"></i> Details</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="service-full-card" data-cat="utility">
+              <div class="sfc-icon" style="background:#E8F5E9;"><i class="fas fa-bolt" style="color:#2E7D32;"></i></div>
+              <div class="sfc-body">
+                <h3>New Electricity Connection</h3>
+                <p>Apply for domestic or commercial electricity connection through TSSPDCL / TSNPDCL online.</p>
+                <div class="sfc-meta">
+                  <span><i class="fas fa-clock"></i> 3 Days</span>
+                  <span><i class="fas fa-rupee-sign"></i> ₹500–₹2000</span>
+                  <span><i class="fas fa-laptop"></i> Online</span>
+                </div>
+                <div class="sfc-actions">
+                  <a href="dashboard.html" class="btn-apply"><i class="fas fa-paper-plane"></i> Apply</a>
+                  <a href="#" class="btn-info"><i class="fas fa-info-circle"></i> Details</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="service-full-card" data-cat="health">
+              <div class="sfc-icon" style="background:#FCE4EC;"><i class="fas fa-baby" style="color:#C62828;"></i></div>
+              <div class="sfc-body">
+                <h3>Birth Certificate</h3>
+                <p>Apply for birth certificate for newborns and obtain digitally signed copy online.</p>
+                <div class="sfc-meta">
+                  <span><i class="fas fa-clock"></i> 2 Days</span>
+                  <span><i class="fas fa-rupee-sign"></i> ₹25</span>
+                  <span><i class="fas fa-laptop"></i> Online</span>
+                </div>
+                <div class="sfc-actions">
+                  <a href="dashboard.html" class="btn-apply"><i class="fas fa-paper-plane"></i> Apply</a>
+                  <a href="#" class="btn-info"><i class="fas fa-info-circle"></i> Details</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="service-full-card" data-cat="welfare">
+              <div class="sfc-icon" style="background:#E3F0FF;"><i class="fas fa-bus-alt" style="color:#0D47A1;"></i></div>
+              <div class="sfc-body">
+                <h3>Mahalakshmi Bus Pass</h3>
+                <p>Free bus travel pass for women in all TSRTC buses — apply with Aadhaar and photo.</p>
+                <div class="sfc-meta">
+                  <span><i class="fas fa-clock"></i> 1 Day</span>
+                  <span><i class="fas fa-rupee-sign"></i> Free</span>
+                  <span><i class="fas fa-laptop"></i> Online</span>
+                  <span class="service-badge new">New</span>
+                </div>
+                <div class="sfc-actions">
+                  <a href="dashboard.html" class="btn-apply"><i class="fas fa-paper-plane"></i> Apply</a>
+                  <a href="#" class="btn-info"><i class="fas fa-info-circle"></i> Details</a>
+                </div>
+              </div>
+            </div>
+
+          </div><!-- /services-full-grid -->
+
+          <!-- Pagination -->
+          <div class="pagination">
+            <a href="#" class="active">1</a>
+            <a href="#">2</a>
+            <a href="#">3</a>
+            <a href="#">4</a>
+            <a href="#">5</a>
+            <span>...</span>
+            <a href="#">42</a>
+            <a href="#"><i class="fas fa-chevron-right"></i></a>
+          </div>
+        </div><!-- /right col -->
+      </div><!-- /services-layout -->
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <div>© 2025 Government of Telangana. All Rights Reserved.</div>
+        <div class="footer-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+          <a href="#">Accessibility</a>
+          <a href="#">Sitemap</a>
+        </div>
+        <div class="footer-badges"><span><i class="fas fa-lock"></i> SSL Secured</span></div>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="backToTop"><i class="fas fa-chevron-up"></i></button>
+
+  <script src="js/nav.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    // Category tab filter
+    document.querySelectorAll('.cat-tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        document.querySelectorAll('.cat-tab').forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        const cat = tab.dataset.cat;
+        document.querySelectorAll('.service-full-card').forEach(card => {
+          if (cat === 'all' || card.dataset.cat === cat) {
+            card.style.display = '';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+        const visible = document.querySelectorAll('.service-full-card:not([style*="none"])').length;
+        document.querySelector('.results-bar span').innerHTML =
+          `Showing <strong>${visible}</strong> services`;
+      });
+    });
+
+    // Duplicate ticker for seamless loop
+    const ti = document.querySelector('.ticker-inner');
+    if (ti) ti.innerHTML += ti.innerHTML;
+  </script>
+</body>
+</html>

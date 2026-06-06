@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sachivalayam Portal – Digital Citizen Services, Telangana</title>
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+  <link rel="stylesheet" href="css/premium.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi&family=Noto+Sans:wght@400;500;600;700;800&family=Mukta:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+  <!-- PAGE LOAD BAR -->
+  <div id="page-loader"></div>
+
+  <!-- TOP UTILITY BAR -->
+  <div class="utility-bar">
+    <div class="container utility-inner">
+      <div class="utility-left">
+        <a href="#main-content"><i class="fas fa-eye"></i> Skip to Main Content</a>
+        <span class="divider">|</span>
+        <span>Screen Reader Access</span>
+        <span class="divider">|</span>
+        <span class="font-size-controls">
+          <button onclick="changeFontSize(-1)" title="Decrease text">A-</button>
+          <button onclick="changeFontSize(0)" title="Normal text">A</button>
+          <button onclick="changeFontSize(1)" title="Increase text">A+</button>
+        </span>
+      </div>
+      <div class="utility-right">
+        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        <span class="divider">|</span>
+        <span class="lang-toggle"><i class="fas fa-globe"></i> <a href="#">English</a> | <a href="#">తెలుగు</a></span>
+        <span class="divider">|</span>
+        <span class="last-updated"><i class="fas fa-sync-alt"></i> Updated: 06 Jun 2026</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN HEADER -->
+  <header class="main-header" id="main-content">
+    <div class="container header-inner">
+      <div class="header-logo">
+        <div class="emblem">
+          <svg width="72" height="72" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="36" cy="36" r="34" fill="#0D47A1" stroke="#FF9933" stroke-width="3"/>
+            <circle cx="36" cy="36" r="24" fill="none" stroke="rgba(255,153,51,0.4)" stroke-width="1" stroke-dasharray="3 2"/>
+            <circle cx="36" cy="36" r="16" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+            <!-- Spokes -->
+            <line x1="36" y1="8" x2="36" y2="16" stroke="#FF9933" stroke-width="2" stroke-linecap="round"/>
+            <line x1="56.5" y1="15.5" x2="51" y2="21" stroke="#FF9933" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="64" y1="36" x2="56" y2="36" stroke="#FF9933" stroke-width="2" stroke-linecap="round"/>
+            <line x1="56.5" y1="56.5" x2="51" y2="51" stroke="#FF9933" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="36" y1="64" x2="36" y2="56" stroke="#FF9933" stroke-width="2" stroke-linecap="round"/>
+            <line x1="15.5" y1="56.5" x2="21" y2="51" stroke="#FF9933" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="8" y1="36" x2="16" y2="36" stroke="#FF9933" stroke-width="2" stroke-linecap="round"/>
+            <line x1="15.5" y1="15.5" x2="21" y2="21" stroke="#FF9933" stroke-width="1.5" stroke-linecap="round"/>
+            <!-- Center -->
+            <circle cx="36" cy="36" r="10" fill="#FF9933" opacity="0.9"/>
+            <circle cx="36" cy="36" r="5" fill="#0D47A1"/>
+            <circle cx="36" cy="36" r="2" fill="#FF9933"/>
+            <text x="36" y="58" text-anchor="middle" fill="white" font-size="7" font-family="Noto Sans" font-weight="800" letter-spacing="1">TELANGANA</text>
+          </svg>
+        </div>
+        <div class="logo-text">
+          <span class="logo-title">DCAP</span>
+          <span class="logo-sub">Digitalized Citizen Assistance Portal</span>
+          <span class="logo-dept">For Gram/Ward Sachivalayam Citizen Services</span>
+        </div>
+      </div>
+      <div class="header-center">
+        <div class="national-emblem-block">
+          <div class="tricolor-stripe"></div>
+          <div class="satyameva">सत्यमेव जयते</div>
+          <div class="satyameva-eng">Satyameva Jayate · Truth Alone Triumphs</div>
+          <div class="digital-india-tag">
+            <i class="fas fa-wifi"></i> Digital India
+          </div>
+        </div>
+      </div>
+      <div class="header-right">
+        <a href="dashboard.html" class="btn-login"><i class="fas fa-user-circle"></i> Citizen Login</a>
+        <a href="#" class="btn-register"><i class="fas fa-user-plus"></i> Register</a>
+        <div class="helpline">
+          <div class="helpline-icon-wrap">
+            <i class="fas fa-headset"></i>
+          </div>
+          <div>
+            <span class="helpline-label">24/7 Helpline</span>
+            <span class="helpline-num">1800-599-4747</span>
+            <span class="helpline-free">Toll Free</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- NAVIGATION BAR -->
+  <nav class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <button class="hamburger" id="hamburger" aria-label="Toggle Menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" class="active"><i class="fas fa-home"></i> Home</a></li>
+        <li class="dropdown">
+          <a href="services.html"><i class="fas fa-layer-group"></i> Services <i class="fas fa-chevron-down fa-xs"></i></a>
+          <div class="dropdown-menu">
+            <a href="#"><i class="fas fa-id-card"></i> Caste &amp; Income Certificate</a>
+            <a href="#"><i class="fas fa-home"></i> Property Registration</a>
+            <a href="#"><i class="fas fa-tractor"></i> Agriculture Services</a>
+            <a href="#"><i class="fas fa-heart"></i> Health Cards</a>
+            <a href="#"><i class="fas fa-graduation-cap"></i> Education</a>
+          </div>
+        </li>
+        <li><a href="schemes.html"><i class="fas fa-medal"></i> Schemes</a></li>
+        <li class="dropdown">
+          <a href="#"><i class="fas fa-building"></i> Departments <i class="fas fa-chevron-down fa-xs"></i></a>
+          <div class="dropdown-menu">
+            <a href="#"><i class="fas fa-gavel"></i> Revenue Department</a>
+            <a href="#"><i class="fas fa-heartbeat"></i> Health &amp; Medical</a>
+            <a href="#"><i class="fas fa-book"></i> Education Department</a>
+            <a href="#"><i class="fas fa-seedling"></i> Agriculture</a>
+          </div>
+        </li>
+        <li><a href="#notices"><i class="fas fa-bell"></i> Notices</a></li>
+        <li><a href="contact.html"><i class="fas fa-phone"></i> Contact</a></li>
+        <li><a href="dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+      </ul>
+      <div class="nav-search">
+        <input type="text" placeholder="Search services, schemes..." aria-label="Search"/>
+        <button aria-label="Search"><i class="fas fa-search"></i></button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MARQUEE TICKER -->
+  <div class="marquee-wrap" role="marquee" aria-label="Important announcements">
+    <span class="ticker-label"><i class="fas fa-bullhorn"></i> Important:</span>
+    <div class="marquee-inner">
+      <span>Rythu Bandhu 2025 Kharif disbursement has started — check your bank account</span>
+      <span>KYC updation mandatory for Aasara Pension beneficiaries before 15 June 2026</span>
+      <span>New e-Passbook facility launched for all Sachivalayam centers</span>
+      <span>Aarogyasri Phase-IV: 300 new hospitals empanelled across Telangana</span>
+      <span>Last date for BC Welfare Board scholarship: 31 June 2026</span>
+      <span>Rythu Bandhu 2025 Kharif disbursement has started — check your bank account</span>
+      <span>KYC updation mandatory for Aasara Pension beneficiaries before 15 June 2026</span>
+      <span>New e-Passbook facility launched for all Sachivalayam centers</span>
+      <span>Aarogyasri Phase-IV: 300 new hospitals empanelled across Telangana</span>
+      <span>Last date for BC Welfare Board scholarship: 31 June 2026</span>
+    </div>
+  </div>
+
+  <!-- HERO SECTION -->
+  <section class="hero" id="hero">
+    <div class="hero-bg-svg">
+      <!-- Government Digital Services SVG Illustration -->
+      <svg viewBox="0 0 1440 580" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="heroGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#0A2E6E;stop-opacity:1"/>
+            <stop offset="55%" style="stop-color:#0D47A1;stop-opacity:1"/>
+            <stop offset="100%" style="stop-color:#1565C0;stop-opacity:1"/>
+          </linearGradient>
+          <linearGradient id="saffronGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#FF9933;stop-opacity:0.9"/>
+            <stop offset="100%" style="stop-color:#FFB347;stop-opacity:0.7"/>
+          </linearGradient>
+          <linearGradient id="screenGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" style="stop-color:#1E88E5;stop-opacity:0.3"/>
+            <stop offset="100%" style="stop-color:#0D47A1;stop-opacity:0.1"/>
+          </linearGradient>
+          <filter id="glow">
+            <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+            <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+        </defs>
+        <!-- Background -->
+        <rect width="1440" height="580" fill="url(#heroGrad)"/>
+        <!-- Grid lines -->
+        <g opacity="0.05" stroke="white" stroke-width="1">
+          <line x1="0" y1="100" x2="1440" y2="100"/><line x1="0" y1="200" x2="1440" y2="200"/>
+          <line x1="0" y1="300" x2="1440" y2="300"/><line x1="0" y1="400" x2="1440" y2="400"/>
+          <line x1="0" y1="500" x2="1440" y2="500"/>
+          <line x1="200" y1="0" x2="200" y2="580"/><line x1="400" y1="0" x2="400" y2="580"/>
+          <line x1="600" y1="0" x2="600" y2="580"/><line x1="800" y1="0" x2="800" y2="580"/>
+          <line x1="1000" y1="0" x2="1000" y2="580"/><line x1="1200" y1="0" x2="1200" y2="580"/>
+          <line x1="1400" y1="0" x2="1400" y2="580"/>
+        </g>
+        <!-- Decorative circles -->
+        <circle cx="1200" cy="100" r="180" fill="rgba(255,153,51,0.06)"/>
+        <circle cx="1200" cy="100" r="120" fill="rgba(255,153,51,0.06)"/>
+        <circle cx="1200" cy="100" r="60" fill="rgba(255,153,51,0.08)"/>
+        <circle cx="100" cy="500" r="140" fill="rgba(255,255,255,0.03)"/>
+        <!-- Building / Government structure -->
+        <g transform="translate(820, 60)" opacity="0.85">
+          <!-- Main building -->
+          <rect x="60" y="200" width="280" height="250" fill="rgba(255,255,255,0.08)" stroke="rgba(255,153,51,0.4)" stroke-width="1.5"/>
+          <!-- Pillars -->
+          <rect x="80" y="220" width="18" height="230" fill="rgba(255,255,255,0.12)"/>
+          <rect x="120" y="220" width="18" height="230" fill="rgba(255,255,255,0.12)"/>
+          <rect x="160" y="220" width="18" height="230" fill="rgba(255,255,255,0.12)"/>
+          <rect x="200" y="220" width="18" height="230" fill="rgba(255,255,255,0.12)"/>
+          <rect x="240" y="220" width="18" height="230" fill="rgba(255,255,255,0.12)"/>
+          <rect x="280" y="220" width="18" height="230" fill="rgba(255,255,255,0.12)"/>
+          <rect x="320" y="220" width="18" height="230" fill="rgba(255,255,255,0.12)"/>
+          <!-- Roof pediment -->
+          <polygon points="40,200 360,200 200,120" fill="rgba(255,153,51,0.15)" stroke="rgba(255,153,51,0.5)" stroke-width="1.5"/>
+          <!-- Dome -->
+          <ellipse cx="200" cy="120" rx="50" ry="30" fill="rgba(255,153,51,0.2)" stroke="rgba(255,153,51,0.6)" stroke-width="2"/>
+          <ellipse cx="200" cy="105" rx="30" ry="20" fill="rgba(255,153,51,0.25)" stroke="rgba(255,153,51,0.7)" stroke-width="1.5"/>
+          <circle cx="200" cy="88" r="8" fill="#FF9933" opacity="0.8"/>
+          <!-- Flag pole -->
+          <line x1="200" y1="80" x2="200" y2="30" stroke="rgba(255,255,255,0.6)" stroke-width="2"/>
+          <rect x="201" y="30" width="28" height="18" fill="#FF9933" opacity="0.8"/>
+          <rect x="201" y="30" width="28" height="6" fill="#FF9933" opacity="0.9"/>
+          <rect x="201" y="36" width="28" height="6" fill="white" opacity="0.8"/>
+          <rect x="201" y="42" width="28" height="6" fill="#138808" opacity="0.8"/>
+          <!-- Steps -->
+          <rect x="40" y="450" width="320" height="12" fill="rgba(255,255,255,0.12)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+          <rect x="20" y="462" width="360" height="12" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+          <!-- Windows / Doors -->
+          <rect x="170" y="310" width="60" height="90" fill="rgba(255,153,51,0.2)" stroke="rgba(255,153,51,0.4)" stroke-width="1"/>
+          <rect x="90" y="320" width="40" height="50" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+          <rect x="270" y="320" width="40" height="50" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+          <!-- Sign board -->
+          <rect x="120" y="260" width="160" height="24" fill="rgba(255,153,51,0.3)" stroke="rgba(255,153,51,0.5)" stroke-width="1" rx="3"/>
+          <text x="200" y="276" text-anchor="middle" fill="white" font-size="10" font-family="Noto Sans" font-weight="600" opacity="0.9">SACHIVALAYAM</text>
+        </g>
+
+        <!-- Laptop / Device -->
+        <g transform="translate(870, 280)" opacity="0.9">
+          <rect x="0" y="0" width="180" height="115" rx="8" fill="rgba(255,255,255,0.12)" stroke="rgba(255,153,51,0.5)" stroke-width="1.5"/>
+          <rect x="6" y="6" width="168" height="103" rx="5" fill="url(#screenGrad)"/>
+          <!-- Screen content - gov portal UI -->
+          <rect x="10" y="10" width="160" height="12" rx="2" fill="rgba(255,153,51,0.4)"/>
+          <rect x="10" y="26" width="75" height="8" rx="2" fill="rgba(255,255,255,0.2)"/>
+          <rect x="10" y="38" width="75" height="8" rx="2" fill="rgba(255,255,255,0.15)"/>
+          <rect x="10" y="50" width="75" height="8" rx="2" fill="rgba(255,255,255,0.15)"/>
+          <!-- Service icons on screen -->
+          <rect x="90" y="24" width="24" height="24" rx="4" fill="rgba(255,153,51,0.35)"/>
+          <rect x="118" y="24" width="24" height="24" rx="4" fill="rgba(255,255,255,0.15)"/>
+          <rect x="146" y="24" width="24" height="24" rx="4" fill="rgba(255,255,255,0.15)"/>
+          <rect x="90" y="52" width="24" height="24" rx="4" fill="rgba(255,255,255,0.15)"/>
+          <rect x="118" y="52" width="24" height="24" rx="4" fill="rgba(255,255,255,0.15)"/>
+          <rect x="146" y="52" width="24" height="24" rx="4" fill="rgba(13,71,161,0.4)"/>
+          <!-- Progress bars -->
+          <rect x="10" y="82" width="160" height="4" rx="2" fill="rgba(255,255,255,0.1)"/>
+          <rect x="10" y="82" width="110" height="4" rx="2" fill="rgba(255,153,51,0.7)"/>
+          <rect x="10" y="90" width="160" height="4" rx="2" fill="rgba(255,255,255,0.1)"/>
+          <rect x="10" y="90" width="75" height="4" rx="2" fill="rgba(255,255,255,0.4)"/>
+          <!-- Keyboard base -->
+          <rect x="-20" y="115" width="220" height="12" rx="4" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+          <rect x="-30" y="127" width="240" height="6" rx="3" fill="rgba(255,255,255,0.06)"/>
+        </g>
+
+        <!-- Mobile phone -->
+        <g transform="translate(1080, 310)" opacity="0.9">
+          <rect x="0" y="0" width="70" height="120" rx="10" fill="rgba(255,255,255,0.1)" stroke="rgba(255,153,51,0.5)" stroke-width="1.5"/>
+          <rect x="4" y="8" width="62" height="104" rx="6" fill="rgba(13,71,161,0.4)"/>
+          <circle cx="35" cy="4" r="3" fill="rgba(255,255,255,0.3)"/>
+          <!-- App icons -->
+          <rect x="8" y="14" width="16" height="16" rx="3" fill="rgba(255,153,51,0.5)"/>
+          <rect x="28" y="14" width="16" height="16" rx="3" fill="rgba(255,255,255,0.2)"/>
+          <rect x="48" y="14" width="16" height="16" rx="3" fill="rgba(255,255,255,0.2)"/>
+          <rect x="8" y="34" width="16" height="16" rx="3" fill="rgba(255,255,255,0.2)"/>
+          <rect x="28" y="34" width="16" height="16" rx="3" fill="rgba(13,200,100,0.4)"/>
+          <rect x="48" y="34" width="16" height="16" rx="3" fill="rgba(255,255,255,0.2)"/>
+          <!-- Notification -->
+          <rect x="6" y="58" width="58" height="28" rx="5" fill="rgba(255,153,51,0.25)" stroke="rgba(255,153,51,0.4)" stroke-width="1"/>
+          <rect x="10" y="63" width="30" height="4" rx="2" fill="rgba(255,255,255,0.5)"/>
+          <rect x="10" y="71" width="44" height="3" rx="2" fill="rgba(255,255,255,0.3)"/>
+          <rect x="10" y="78" width="36" height="3" rx="2" fill="rgba(255,255,255,0.2)"/>
+          <!-- Bottom nav -->
+          <rect x="4" y="94" width="62" height="18" rx="4" fill="rgba(0,0,0,0.2)"/>
+          <circle cx="18" cy="103" r="4" fill="rgba(255,153,51,0.6)"/>
+          <circle cx="35" cy="103" r="4" fill="rgba(255,255,255,0.3)"/>
+          <circle cx="52" cy="103" r="4" fill="rgba(255,255,255,0.3)"/>
+          <circle cx="35" cy="117" r="3" fill="rgba(255,255,255,0.4)"/>
+        </g>
+
+        <!-- Citizen figure -->
+        <g transform="translate(760, 310)" opacity="0.7">
+          <circle cx="30" cy="15" r="13" fill="rgba(255,153,51,0.4)" stroke="rgba(255,153,51,0.6)" stroke-width="1.5"/>
+          <path d="M10 50 Q30 35 50 50 L55 120 L5 120 Z" fill="rgba(255,255,255,0.12)" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+          <line x1="10" y1="65" x2="-5" y2="95" stroke="rgba(255,255,255,0.2)" stroke-width="2" stroke-linecap="round"/>
+          <line x1="50" y1="65" x2="65" y2="95" stroke="rgba(255,255,255,0.2)" stroke-width="2" stroke-linecap="round"/>
+        </g>
+
+        <!-- Floating notification badges -->
+        <g filter="url(#glow)">
+          <rect x="1080" y="200" width="130" height="44" rx="22" fill="rgba(255,153,51,0.9)" opacity="0.95"/>
+          <text x="1145" y="224" text-anchor="middle" fill="white" font-size="11" font-family="Noto Sans" font-weight="700">✓ Certificate Ready!</text>
+          <circle cx="1086" cy="222" r="10" fill="rgba(255,255,255,0.3)"/>
+          <text x="1086" y="226" text-anchor="middle" fill="white" font-size="10">📄</text>
+
+          <rect x="730" y="180" width="120" height="40" rx="20" fill="rgba(46,125,50,0.9)" opacity="0.9"/>
+          <text x="790" y="204" text-anchor="middle" fill="white" font-size="10" font-family="Noto Sans" font-weight="700">✓ Approved!</text>
+
+          <rect x="1150" y="440" width="150" height="44" rx="22" fill="rgba(255,255,255,0.15)" stroke="rgba(255,153,51,0.5)" stroke-width="1.5" opacity="0.9"/>
+          <text x="1225" y="466" text-anchor="middle" fill="rgba(255,255,255,0.9)" font-size="10" font-family="Noto Sans" font-weight="600">500+ Services Online</text>
+        </g>
+
+        <!-- Connection lines -->
+        <g opacity="0.15" stroke="#FF9933" stroke-width="1" stroke-dasharray="4 4">
+          <line x1="800" y1="350" x2="900" y2="330"/>
+          <line x1="1060" y1="340" x2="1080" y2="330"/>
+          <line x1="1145" y1="244" x2="1115" y2="280"/>
+        </g>
+
+        <!-- Bottom wave -->
+        <path d="M0 540 Q360 510 720 535 Q1080 560 1440 530 L1440 580 L0 580 Z" fill="rgba(245,247,250,0.08)"/>
+      </svg>
+    </div>
+
+    <div class="hero-slides">
+      <div class="hero-slide active">
+        <div class="hero-overlay-premium"></div>
+        <div class="container hero-content">
+          <div class="hero-badge animate-fade-in">
+            <i class="fas fa-star"></i> Digital India Initiative &nbsp;·&nbsp; <i class="fas fa-shield-alt"></i> Trusted Government Platform
+          </div>
+          <h1 class="hero-title animate-slide-up">
+            Digital Governance<br/>
+            <span class="highlight-saffron">At Your Doorstep</span>
+          </h1>
+          <p class="hero-sub animate-slide-up delay-1">
+            Access 500+ Government Services Online — Anytime, Anywhere.<br/>
+            <strong>Transparent · Fast · Reliable</strong> Citizen Services for Telangana
+          </p>
+          <div class="hero-actions animate-slide-up delay-2">
+            <a href="services.html" class="btn-primary-hero ripple">
+              <i class="fas fa-rocket"></i> Explore Services
+            </a>
+            <a href="#track" class="btn-outline-hero">
+              <i class="fas fa-search-location"></i> Track Application
+            </a>
+            <a href="dashboard.html" class="btn-ghost-hero">
+              <i class="fas fa-user-circle"></i> My Dashboard
+            </a>
+          </div>
+          <div class="hero-stats-bar animate-slide-up delay-3">
+            <div class="hstat"><span class="hstat-num" data-count="1234567">0</span><span class="hstat-label">Applications Processed</span></div>
+            <div class="hstat-div"></div>
+            <div class="hstat"><span class="hstat-num" data-count="500">0</span><span class="hstat-label">Services Available</span></div>
+            <div class="hstat-div"></div>
+            <div class="hstat"><span class="hstat-num" data-count="33">0</span><span class="hstat-label">Districts Covered</span></div>
+            <div class="hstat-div"></div>
+            <div class="hstat"><span class="hstat-num" data-count="98">0</span><span class="hstat-label">% Satisfaction Rate</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-scroll-hint">
+      <span>Scroll Down</span>
+      <i class="fas fa-chevron-down bounce"></i>
+    </div>
+  </section>
+
+  <!-- QUICK TRACK APPLICATION BAR -->
+  <section class="track-bar" id="track">
+    <div class="container track-inner">
+      <div class="track-label"><i class="fas fa-map-marker-alt"></i> Track Your Application</div>
+      <div class="track-form">
+        <select aria-label="Service Type">
+          <option>Select Service Type</option>
+          <option>Caste Certificate</option>
+          <option>Income Certificate</option>
+          <option>Land Records</option>
+          <option>Pension</option>
+        </select>
+        <input type="text" placeholder="Enter Application / Token Number" aria-label="Application Number"/>
+        <button class="btn-track"><i class="fas fa-search"></i> Track Now</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUICK SERVICES SECTION -->
+  <section class="quick-services-section">
+    <div class="container">
+      <div class="quick-services-grid">
+        <a href="services.html#certificates" class="quick-service-card reveal">
+          <div class="qs-icon-wrap" style="--qs-color:#0D47A1">
+            <i class="fas fa-certificate"></i>
+          </div>
+          <span class="qs-label">Certificates</span>
+          <span class="qs-count">48 Services</span>
+        </a>
+        <a href="schemes.html" class="quick-service-card reveal" style="transition-delay:0.05s">
+          <div class="qs-icon-wrap" style="--qs-color:#2E7D32">
+            <i class="fas fa-hand-holding-heart"></i>
+          </div>
+          <span class="qs-label">Govt Schemes</span>
+          <span class="qs-count">120+ Schemes</span>
+        </a>
+        <a href="contact.html#complaints" class="quick-service-card reveal" style="transition-delay:0.10s">
+          <div class="qs-icon-wrap" style="--qs-color:#C62828">
+            <i class="fas fa-comments"></i>
+          </div>
+          <span class="qs-label">Complaints</span>
+          <span class="qs-count">File Online</span>
+        </a>
+        <a href="#" class="quick-service-card reveal" style="transition-delay:0.15s">
+          <div class="qs-icon-wrap" style="--qs-color:#6A1B9A">
+            <i class="fas fa-calendar-check"></i>
+          </div>
+          <span class="qs-label">Appointments</span>
+          <span class="qs-count">Book Slot</span>
+        </a>
+        <a href="contact.html" class="quick-service-card reveal" style="transition-delay:0.20s">
+          <div class="qs-icon-wrap" style="--qs-color:#E65100">
+            <i class="fas fa-address-book"></i>
+          </div>
+          <span class="qs-label">Contacts</span>
+          <span class="qs-count">All Offices</span>
+        </a>
+        <a href="#notices" class="quick-service-card reveal" style="transition-delay:0.25s">
+          <div class="qs-icon-wrap" style="--qs-color:#00695C">
+            <i class="fas fa-bell"></i>
+          </div>
+          <span class="qs-label">Notifications</span>
+          <span class="qs-count">Stay Updated</span>
+        </a>
+        <a href="#" class="quick-service-card reveal" style="transition-delay:0.30s">
+          <div class="qs-icon-wrap" style="--qs-color:#1565C0">
+            <i class="fas fa-file-invoice"></i>
+          </div>
+          <span class="qs-label">e-Documents</span>
+          <span class="qs-count">DigiLocker</span>
+        </a>
+        <a href="dashboard.html" class="quick-service-card reveal" style="transition-delay:0.35s">
+          <div class="qs-icon-wrap" style="--qs-color:#FF9933">
+            <i class="fas fa-tachometer-alt"></i>
+          </div>
+          <span class="qs-label">My Dashboard</span>
+          <span class="qs-count">Track All</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES SECTION -->
+  <section class="section services-section" id="services">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag">Our Digital Services</div>
+        <h2 class="section-title">Citizen Services <span class="accent">Made Simple</span></h2>
+        <p class="section-desc">Avail government services from the comfort of your home. No queues. No delays.</p>
+      </div>
+      <div class="services-grid stagger-children">
+        <div class="service-card reveal" data-delay="0">
+          <div class="service-icon-wrap" style="--color: #0D47A1"><i class="fas fa-id-card"></i></div>
+          <h3>Caste Certificate</h3>
+          <p>Apply online for caste, income &amp; residence certificates with Aadhaar verification.</p>
+          <div class="service-meta"><span><i class="fas fa-clock"></i> 3–5 Working Days</span><span class="service-badge new">New</span></div>
+          <a href="services.html" class="service-link">Apply Now <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="service-card reveal" data-delay="1">
+          <div class="service-icon-wrap" style="--color: #2E7D32"><i class="fas fa-tractor"></i></div>
+          <h3>Agriculture Services</h3>
+          <p>Farmer registration, crop insurance, loan waivers &amp; subsidy applications.</p>
+          <div class="service-meta"><span><i class="fas fa-clock"></i> 7 Working Days</span></div>
+          <a href="services.html" class="service-link">Apply Now <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="service-card reveal" data-delay="2">
+          <div class="service-icon-wrap" style="--color: #C62828"><i class="fas fa-heartbeat"></i></div>
+          <h3>Health &amp; Aarogyasri</h3>
+          <p>Aarogyasri enrollment, health cards, medical reimbursement &amp; hospital empanelment.</p>
+          <div class="service-meta"><span><i class="fas fa-clock"></i> 2 Working Days</span><span class="service-badge popular">Popular</span></div>
+          <a href="services.html" class="service-link">Apply Now <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="service-card reveal" data-delay="3">
+          <div class="service-icon-wrap" style="--color: #6A1B9A"><i class="fas fa-graduation-cap"></i></div>
+          <h3>Education &amp; Scholarships</h3>
+          <p>School enrollment, scholarships, fee reimbursement &amp; hostel seat applications.</p>
+          <div class="service-meta"><span><i class="fas fa-clock"></i> 5 Working Days</span></div>
+          <a href="services.html" class="service-link">Apply Now <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="service-card reveal" data-delay="4">
+          <div class="service-icon-wrap" style="--color: #E65100"><i class="fas fa-home"></i></div>
+          <h3>Property &amp; Land Records</h3>
+          <p>Pahani, land registration, mutation entries &amp; EC (Encumbrance Certificate).</p>
+          <div class="service-meta"><span><i class="fas fa-clock"></i> 1 Working Day</span></div>
+          <a href="services.html" class="service-link">Apply Now <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="service-card reveal" data-delay="5">
+          <div class="service-icon-wrap" style="--color: #00695C"><i class="fas fa-coins"></i></div>
+          <h3>Pension &amp; Social Security</h3>
+          <p>Old age, widow, disability pension applications and benefit verification.</p>
+          <div class="service-meta"><span><i class="fas fa-clock"></i> 7 Working Days</span><span class="service-badge urgent">Priority</span></div>
+          <a href="services.html" class="service-link">Apply Now <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="service-card reveal" data-delay="6">
+          <div class="service-icon-wrap" style="--color: #1565C0"><i class="fas fa-water"></i></div>
+          <h3>Water &amp; Electricity</h3>
+          <p>New connections, billing complaints, meter reading &amp; subsidy applications.</p>
+          <div class="service-meta"><span><i class="fas fa-clock"></i> 3 Working Days</span></div>
+          <a href="services.html" class="service-link">Apply Now <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="service-card reveal" data-delay="7">
+          <div class="service-icon-wrap" style="--color: #AD1457"><i class="fas fa-child"></i></div>
+          <h3>Women &amp; Child Welfare</h3>
+          <p>ICDS, maternity benefits, crèche registration &amp; nutrition programs.</p>
+          <div class="service-meta"><span><i class="fas fa-clock"></i> 5 Working Days</span></div>
+          <a href="services.html" class="service-link">Apply Now <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+      <div class="view-all-wrap reveal">
+        <a href="services.html" class="btn-view-all">View All 500+ Services <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATISTICS SECTION -->
+  <section class="stats-section">
+    <div class="stats-bg-pattern"></div>
+    <div class="container">
+      <div class="section-header light reveal">
+        <div class="section-tag" style="background:rgba(255,153,51,0.2);border-color:rgba(255,153,51,0.4);color:#FFD580;">Impact &amp; Reach</div>
+        <h2 class="section-title">Trusted by <span class="accent-light">Millions of Citizens</span></h2>
+      </div>
+      <div class="stats-grid stagger-children">
+        <div class="stat-card reveal">
+          <div class="stat-icon"><i class="fas fa-users"></i></div>
+          <div class="stat-count" data-count="4500000">0</div><div class="stat-suffix">+</div>
+          <div class="stat-label">Registered Citizens</div>
+        </div>
+        <div class="stat-card reveal">
+          <div class="stat-icon"><i class="fas fa-file-alt"></i></div>
+          <div class="stat-count" data-count="1234567">0</div><div class="stat-suffix">+</div>
+          <div class="stat-label">Applications Processed</div>
+        </div>
+        <div class="stat-card reveal">
+          <div class="stat-icon"><i class="fas fa-layer-group"></i></div>
+          <div class="stat-count" data-count="500">0</div><div class="stat-suffix">+</div>
+          <div class="stat-label">Services Available</div>
+        </div>
+        <div class="stat-card reveal">
+          <div class="stat-icon"><i class="fas fa-map-marker-alt"></i></div>
+          <div class="stat-count" data-count="10000">0</div><div class="stat-suffix">+</div>
+          <div class="stat-label">Sachivalayam Centers</div>
+        </div>
+        <div class="stat-card reveal">
+          <div class="stat-icon"><i class="fas fa-medal"></i></div>
+          <div class="stat-count" data-count="120">0</div><div class="stat-suffix">+</div>
+          <div class="stat-label">Schemes Available</div>
+        </div>
+        <div class="stat-card reveal">
+          <div class="stat-icon"><i class="fas fa-check-circle"></i></div>
+          <div class="stat-count" data-count="98">0</div><div class="stat-suffix">%</div>
+          <div class="stat-label">Complaints Resolved</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NOTICE BOARD SECTION -->
+  <section class="section notices-section" id="notices">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag">Announcements</div>
+        <h2 class="section-title">Notice Board <span class="accent">&amp; Alerts</span></h2>
+        <p class="section-desc">Stay informed with the latest government notifications and deadlines</p>
+      </div>
+      <div class="notices-layout">
+        <div class="notice-board reveal">
+          <div class="notice-header">
+            <i class="fas fa-bullhorn"></i>
+            <h3>Latest Notices &amp; Announcements</h3>
+            <span class="notice-live"><i class="fas fa-circle"></i> LIVE</span>
+          </div>
+          <div class="notice-categories">
+            <button class="notice-cat active" data-cat="all">All</button>
+            <button class="notice-cat" data-cat="urgent">Urgent</button>
+            <button class="notice-cat" data-cat="scheme">Scheme</button>
+            <button class="notice-cat" data-cat="camp">Health Camp</button>
+          </div>
+          <div class="notice-scroll-wrap">
+            <div class="notice-list" id="noticeList">
+              <div class="notice-item" data-cat="scheme">
+                <span class="notice-date"><i class="fas fa-calendar-alt"></i> 02 Jun 2026</span>
+                <span class="notice-tag new">Scheme</span>
+                <p>Online submission of Pattadar Passbooks now enabled for all districts. Last date: 30 June 2026.</p>
+              </div>
+              <div class="notice-item" data-cat="urgent">
+                <span class="notice-date"><i class="fas fa-calendar-alt"></i> 30 May 2026</span>
+                <span class="notice-tag urgent">⚠ Urgent</span>
+                <p>Rythu Bandhu 2026 Kharif season disbursement started. Eligible farmers check payment status.</p>
+              </div>
+              <div class="notice-item" data-cat="camp">
+                <span class="notice-date"><i class="fas fa-calendar-alt"></i> 28 May 2026</span>
+                <span class="notice-tag" style="background:#E3F2FD;color:#1565C0;">Health Camp</span>
+                <p>Free Health Camp at Village Panchayat Office — 10 Jun 2026. All residents invited.</p>
+              </div>
+              <div class="notice-item" data-cat="urgent">
+                <span class="notice-date"><i class="fas fa-calendar-alt"></i> 25 May 2026</span>
+                <span class="notice-tag urgent">⚠ Deadline</span>
+                <p>KYC updation mandatory for Aasara Pension beneficiaries before 15 June 2026.</p>
+              </div>
+              <div class="notice-item" data-cat="scheme">
+                <span class="notice-date"><i class="fas fa-calendar-alt"></i> 20 May 2026</span>
+                <span class="notice-tag new">New</span>
+                <p>2BHK Housing scheme: Possession letters to be distributed in Hyderabad on 25 May 2026.</p>
+              </div>
+              <div class="notice-item" data-cat="urgent">
+                <span class="notice-date"><i class="fas fa-calendar-alt"></i> 15 May 2026</span>
+                <span class="notice-tag urgent">⚠ Urgent</span>
+                <p>Last date for scholarship application under BC Welfare Board is 31 May 2026.</p>
+              </div>
+              <div class="notice-item" data-cat="camp">
+                <span class="notice-date"><i class="fas fa-calendar-alt"></i> 10 May 2026</span>
+                <span class="notice-tag" style="background:#E8F5E9;color:#2E7D32;">Village Meeting</span>
+                <p>Gram Sabha meeting scheduled at Mandal Parishad Office on 20 May 2026 at 10:00 AM.</p>
+              </div>
+            </div>
+          </div>
+          <a href="#" class="notice-view-all">View All Notices <i class="fas fa-arrow-right"></i></a>
+        </div>
+
+        <div class="notice-right">
+          <div class="alert-cards reveal">
+            <div class="alert-card emergency">
+              <div class="alert-icon"><i class="fas fa-exclamation-triangle"></i></div>
+              <div class="alert-content">
+                <strong>Emergency Helpline</strong>
+                <span>TSEMS: 108 | Police: 100 | Women: 181</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="downloads-card reveal">
+            <div class="downloads-header"><i class="fas fa-download"></i> Quick Downloads</div>
+            <ul class="downloads-list">
+              <li><a href="#"><i class="fas fa-file-pdf"></i> Caste Certificate Application Form<span>PDF</span></a></li>
+              <li><a href="#"><i class="fas fa-file-pdf"></i> Income Certificate Form<span>PDF</span></a></li>
+              <li><a href="#"><i class="fas fa-file-pdf"></i> Rythu Bandhu Eligibility Criteria<span>PDF</span></a></li>
+              <li><a href="#"><i class="fas fa-file-word"></i> NOC Application Template<span>DOC</span></a></li>
+              <li><a href="#"><i class="fas fa-file-pdf"></i> Aarogyasri Empanelment List<span>PDF</span></a></li>
+            </ul>
+          </div>
+          <div class="helpline-card reveal">
+            <div class="helpline-card-icon"><i class="fas fa-headset"></i></div>
+            <div class="helpline-card-info">
+              <h4>24/7 Citizen Helpline</h4>
+              <div class="helpline-numbers">
+                <div><i class="fas fa-phone"></i> 1800-599-4747</div>
+                <div><i class="fab fa-whatsapp"></i> 9000-123-456</div>
+                <div><i class="fas fa-envelope"></i> help@sachivalayam.ts.gov.in</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCHEMES HIGHLIGHT SECTION -->
+  <section class="section schemes-section" id="schemes">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag">Government Schemes</div>
+        <h2 class="section-title">Flagship <span class="accent">Schemes &amp; Programs</span></h2>
+        <p class="section-desc">Explore welfare schemes designed for citizens of Telangana</p>
+      </div>
+      <div class="schemes-grid stagger-children">
+        <div class="scheme-card featured reveal">
+          <div class="scheme-ribbon">Flagship</div>
+          <div class="scheme-icon"><i class="fas fa-hand-holding-heart"></i></div>
+          <h3>Rythu Bandhu</h3>
+          <p>Investment support of ₹10,000 per acre per year for farmers to meet agricultural needs.</p>
+          <div class="scheme-tags"><span>Agriculture</span><span>Farmers</span></div>
+          <a href="schemes.html" class="scheme-link">Know More <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="scheme-card reveal">
+          <div class="scheme-icon"><i class="fas fa-heartbeat"></i></div>
+          <h3>Aarogyasri</h3>
+          <p>Universal health coverage up to ₹5 lakh per family per year for major surgeries.</p>
+          <div class="scheme-tags"><span>Health</span><span>BPL Families</span></div>
+          <a href="schemes.html" class="scheme-link">Know More <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="scheme-card reveal">
+          <div class="scheme-icon"><i class="fas fa-home"></i></div>
+          <h3>2BHK Housing</h3>
+          <p>Free double bedroom houses for BPL families in urban and rural areas of Telangana.</p>
+          <div class="scheme-tags"><span>Housing</span><span>Urban &amp; Rural</span></div>
+          <a href="schemes.html" class="scheme-link">Know More <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="scheme-card reveal">
+          <div class="scheme-icon"><i class="fas fa-bus-alt"></i></div>
+          <h3>Mahalakshmi Free Bus</h3>
+          <p>Free bus travel for women in all RTC buses across Telangana — empowering mobility.</p>
+          <div class="scheme-tags"><span>Women</span><span>Transport</span></div>
+          <a href="schemes.html" class="scheme-link">Know More <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="scheme-card reveal">
+          <div class="scheme-icon"><i class="fas fa-graduation-cap"></i></div>
+          <h3>Fee Reimbursement</h3>
+          <p>Full tuition fee reimbursement for SC/ST/BC/EWS students in professional courses.</p>
+          <div class="scheme-tags"><span>Education</span><span>SC/ST/BC</span></div>
+          <a href="schemes.html" class="scheme-link">Know More <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="scheme-card reveal">
+          <div class="scheme-icon"><i class="fas fa-coins"></i></div>
+          <h3>Aasara Pension</h3>
+          <p>Monthly pension support for old age, widows, weavers and differently-abled citizens.</p>
+          <div class="scheme-tags"><span>Pension</span><span>Social Security</span></div>
+          <a href="schemes.html" class="scheme-link">Know More <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+      <div class="view-all-wrap reveal">
+        <a href="schemes.html" class="btn-view-all">View All 120+ Schemes <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="section how-section">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag">Process Guide</div>
+        <h2 class="section-title">How It <span class="accent">Works</span></h2>
+        <p class="section-desc">Get your services in 4 easy steps</p>
+      </div>
+      <div class="steps-grid">
+        <div class="step-card reveal">
+          <div class="step-num">01</div>
+          <div class="step-icon"><i class="fas fa-user-plus"></i></div>
+          <h3>Register</h3>
+          <p>Create your citizen account using Aadhaar and mobile number verification.</p>
+          <div class="step-arrow"><i class="fas fa-arrow-right"></i></div>
+        </div>
+        <div class="step-card reveal">
+          <div class="step-num">02</div>
+          <div class="step-icon"><i class="fas fa-search"></i></div>
+          <h3>Choose Service</h3>
+          <p>Browse 500+ services and select the one you need from the categories.</p>
+          <div class="step-arrow"><i class="fas fa-arrow-right"></i></div>
+        </div>
+        <div class="step-card reveal">
+          <div class="step-num">03</div>
+          <div class="step-icon"><i class="fas fa-file-upload"></i></div>
+          <h3>Apply Online</h3>
+          <p>Fill the form and upload required documents from your device or DigiLocker.</p>
+          <div class="step-arrow"><i class="fas fa-arrow-right"></i></div>
+        </div>
+        <div class="step-card reveal">
+          <div class="step-num">04</div>
+          <div class="step-icon"><i class="fas fa-check-circle"></i></div>
+          <h3>Receive Certificate</h3>
+          <p>Get your digitally signed certificate via email, SMS, or DigiLocker.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEPARTMENTS SECTION -->
+  <section class="section departments-section">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag">Government Departments</div>
+        <h2 class="section-title">Connected <span class="accent">Departments</span></h2>
+      </div>
+      <div class="dept-grid stagger-children">
+        <a href="#" class="dept-card reveal"><i class="fas fa-gavel"></i><span>Revenue</span></a>
+        <a href="#" class="dept-card reveal"><i class="fas fa-heartbeat"></i><span>Health</span></a>
+        <a href="#" class="dept-card reveal"><i class="fas fa-book-open"></i><span>Education</span></a>
+        <a href="#" class="dept-card reveal"><i class="fas fa-seedling"></i><span>Agriculture</span></a>
+        <a href="#" class="dept-card reveal"><i class="fas fa-road"></i><span>Roads &amp; Buildings</span></a>
+        <a href="#" class="dept-card reveal"><i class="fas fa-water"></i><span>Irrigation</span></a>
+        <a href="#" class="dept-card reveal"><i class="fas fa-shield-alt"></i><span>Police</span></a>
+        <a href="#" class="dept-card reveal"><i class="fas fa-industry"></i><span>Industries</span></a>
+        <a href="#" class="dept-card reveal"><i class="fas fa-users"></i><span>Social Welfare</span></a>
+        <a href="#" class="dept-card reveal"><i class="fas fa-child"></i><span>Women &amp; Child</span></a>
+        <a href="#" class="dept-card reveal"><i class="fas fa-tree"></i><span>Forest</span></a>
+        <a href="#" class="dept-card reveal"><i class="fas fa-laptop-code"></i><span>IT &amp; Electronics</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="section testimonials-section">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag">Citizen Voices</div>
+        <h2 class="section-title">What Citizens <span class="accent">Say</span></h2>
+      </div>
+      <div class="testimonials-grid stagger-children">
+        <div class="testimonial-card reveal">
+          <div class="testi-quote"><i class="fas fa-quote-left"></i></div>
+          <p>I got my caste certificate within 2 days without visiting any office. Sachivalayam portal is truly a revolution.</p>
+          <div class="testi-author">
+            <div class="testi-avatar">RS</div>
+            <div><strong>Ramesh Shetty</strong><span>Farmer, Nalgonda District</span></div>
+          </div>
+          <div class="testi-stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+        </div>
+        <div class="testimonial-card reveal">
+          <div class="testi-quote"><i class="fas fa-quote-left"></i></div>
+          <p>Applied for Aarogyasri card online and received home delivery of the card. Excellent digital service by Telangana govt.</p>
+          <div class="testi-author">
+            <div class="testi-avatar">LK</div>
+            <div><strong>Lakshmi Kumari</strong><span>Homemaker, Warangal</span></div>
+          </div>
+          <div class="testi-stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+        </div>
+        <div class="testimonial-card reveal">
+          <div class="testi-quote"><i class="fas fa-quote-left"></i></div>
+          <p>Land record mutation done online in one sitting. The officer called me for confirmation and everything was settled fast.</p>
+          <div class="testi-author">
+            <div class="testi-avatar">VP</div>
+            <div><strong>Venkat Rao Pillai</strong><span>Businessman, Karimnagar</span></div>
+          </div>
+          <div class="testi-stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIGITAL INDIA PARTNERS STRIP -->
+  <div class="partners-strip">
+    <div class="container partners-inner">
+      <span class="partners-label">Integrated with:</span>
+      <div class="partners-list">
+        <div class="partner-badge"><i class="fas fa-file-alt"></i> DigiLocker</div>
+        <div class="partner-badge"><i class="fas fa-id-card"></i> Aadhaar</div>
+        <div class="partner-badge"><i class="fas fa-mobile-alt"></i> UMANG</div>
+        <div class="partner-badge"><i class="fas fa-university"></i> PFMS</div>
+        <div class="partner-badge"><i class="fas fa-wifi"></i> BharatNet</div>
+        <div class="partner-badge"><i class="fas fa-rupee-sign"></i> UPI / BBPS</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="container footer-top-inner">
+        <div class="footer-brand">
+          <div class="footer-emblem-row">
+            <svg width="44" height="44" viewBox="0 0 64 64" fill="none">
+              <circle cx="32" cy="32" r="30" fill="#0D47A1" stroke="#FF9933" stroke-width="2.5"/>
+              <circle cx="32" cy="32" r="8" fill="#FF9933" opacity="0.9"/>
+              <circle cx="32" cy="32" r="4" fill="#0D47A1"/>
+              <text x="32" y="50" text-anchor="middle" fill="white" font-size="7" font-family="Noto Sans" font-weight="700">TS</text>
+            </svg>
+            <div class="footer-logo-text">
+              <span>Sachivalayam Citizen Portal</span>
+              <small>Government of Telangana</small>
+            </div>
+          </div>
+          <p>An initiative under Digital India programme to deliver government services at the doorstep of every citizen of Telangana.</p>
+          <div class="footer-emergency-box">
+            <div class="footer-emergency-title"><i class="fas fa-exclamation-triangle"></i> Emergency Contacts</div>
+            <div class="footer-emergency-grid">
+              <div><span>Police</span><strong>100</strong></div>
+              <div><span>Ambulance</span><strong>108</strong></div>
+              <div><span>Women Help</span><strong>181</strong></div>
+              <div><span>Disaster</span><strong>1070</strong></div>
+            </div>
+          </div>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4><i class="fas fa-link"></i> Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">All Services</a></li>
+            <li><a href="schemes.html">Schemes</a></li>
+            <li><a href="dashboard.html">My Dashboard</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4><i class="fas fa-star"></i> Popular Services</h4>
+          <ul>
+            <li><a href="#">Caste Certificate</a></li>
+            <li><a href="#">Income Certificate</a></li>
+            <li><a href="#">Land Records (Pahani)</a></li>
+            <li><a href="#">Aarogyasri Card</a></li>
+            <li><a href="#">Pension Status</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4><i class="fas fa-building"></i> Department Links</h4>
+          <ul>
+            <li><a href="#">Revenue Department</a></li>
+            <li><a href="#">Health &amp; Medical</a></li>
+            <li><a href="#">Education Dept</a></li>
+            <li><a href="#">Agriculture Dept</a></li>
+            <li><a href="#">Social Welfare</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4><i class="fas fa-map-marker-alt"></i> Contact</h4>
+          <div class="footer-contact-list">
+            <div><i class="fas fa-map-marker-alt"></i> BRKR Bhavan, Tank Bund Road, Hyderabad – 500022</div>
+            <div><i class="fas fa-phone"></i> 1800-599-4747 (Toll Free)</div>
+            <div><i class="fas fa-envelope"></i> help@sachivalayam.ts.gov.in</div>
+            <div><i class="fas fa-clock"></i> Mon – Sat: 9:00 AM – 8:00 PM</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <div>© 2026 Government of Telangana. All Rights Reserved. | Last Updated: 06 Jun 2026</div>
+        <div class="footer-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+          <a href="#">Accessibility</a>
+          <a href="#">Sitemap</a>
+          <a href="#">RTI</a>
+          <a href="#">Disclaimer</a>
+        </div>
+        <div class="footer-badges">
+          <span><i class="fas fa-lock"></i> SSL Secured</span>
+          <span><i class="fas fa-wifi"></i> Digital India</span>
+          <span><i class="fas fa-universal-access"></i> WCAG 2.1</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- BACK TO TOP -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fas fa-chevron-up"></i></button>
+
+  <script src="js/nav.js"></script>
+  <script src="js/counter.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/premium.js"></script>
+</body>
+</html>

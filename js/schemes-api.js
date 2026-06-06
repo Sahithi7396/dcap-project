@@ -7,7 +7,7 @@
 (function () {
   'use strict';
 
-  const API_BASE = 'http://localhost:5001/api';
+  const API_BASE = 'https://dcap-project.onrender.com/api';
 
   // ── State ──────────────────────────────────────────────────────────────────
   let allSchemes = [];          // master list from API
